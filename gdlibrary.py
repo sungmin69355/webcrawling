@@ -11,17 +11,19 @@ def findpeople():
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
 
-    nowday = "2020-08-28"
+    nowday = "2020-08-29"
     rank= 0
     ##첫페이지
     for tag in soup.select('td'):
         if tag.text == nowday:
             rank=rank+1
-    ##두번쨰페이지
+
+     ##두번쨰페이지
     driver.find_element_by_xpath("""//*[@id="listForm"]/div[2]/p/span[2]/a""").click()
     for tag in soup.select('td'):
         if tag.text == nowday:
             rank=rank+1
+            
     ##세번째페이지
     driver.find_element_by_xpath("""//*[@id="listForm"]/div[2]/p/span[6]/a""").click()
     for tag in soup.select('td'):
