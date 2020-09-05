@@ -11,7 +11,7 @@ def findpeople():
     html = req.text
     soup = BeautifulSoup(html, 'html.parser')
 
-    nowday = "2020-08-29"
+    nowday = "2020-09-05"
     rank= 0
     ##첫페이지
     for tag in soup.select('td'):
